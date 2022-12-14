@@ -23,4 +23,9 @@ class DemoController {
     fun healthCheck(): ResponseEntity<*> = ResponseEntity.ok("UP")
         .also { log.info("Aplicação está no ar!!") }
 
+    @GetMapping
+    fun execute(): ResponseEntity<*> =
+        ResponseEntity.ok("Developer name: DouG")
+            .also { log.info("Demo controller - developer name: DouG") }
+
 }
