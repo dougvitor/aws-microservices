@@ -43,7 +43,8 @@ class ProductController @Autowired constructor(private val repository: ProductRe
             ResponseEntity(product, HttpStatus.OK)
         }.orElseGet { ResponseEntity(HttpStatus.NOT_FOUND) }
 
-    fun findByCode(@PathVariable("code") code: String): ResponseEntity<Product> =
+    @GetMapping("/bycode")
+    fun findByCode(@RequestParam code: String): ResponseEntity<Product> =
         repository.findByCode(code).map { product: Product ->
             ResponseEntity(product, HttpStatus.OK)
         }.orElseGet { ResponseEntity(HttpStatus.NO_CONTENT) }

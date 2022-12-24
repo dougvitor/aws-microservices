@@ -11,13 +11,13 @@ data class Product(
     var id: Long? = null,
 
     @Column(length = 32, nullable = false)
-    val name: String,
+    val name: String? = "",
 
     @Column(length = 24, nullable = false)
-    val model: String,
+    val model: String? = "",
 
     @Column(length = 8, nullable = false)
-    val code: String,
+    val code: String? = "",
 
     val price: BigDecimal = BigDecimal.ZERO
 
