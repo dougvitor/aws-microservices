@@ -19,6 +19,9 @@ data class Product(
     @Column(length = 8, nullable = false)
     val code: String? = "",
 
-    val price: BigDecimal = BigDecimal.ZERO
+    val price: BigDecimal = BigDecimal.ZERO,
+
+    @Column(length = 12)
+    val color: String? = null
 
 )
