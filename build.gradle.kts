@@ -59,6 +59,7 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.mariadb.jdbc:mariadb-java-client:3.1.0")
+    implementation("com.amazonaws:aws-java-sdk-sns:1.12.376")
 }
 
 tasks.withType<KotlinCompile> {
