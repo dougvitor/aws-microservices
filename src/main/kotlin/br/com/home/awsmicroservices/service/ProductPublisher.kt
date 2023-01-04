@@ -19,7 +19,7 @@ class ProductPublisher @Autowired constructor(
     @Qualifier("productEventsTopic") private val productEventsTopic: Topic,
     private val mapper: ObjectMapper
 ) {
-    private val LOG: Logger = LoggerFactory.getLogger(ProductPublisher::class.java)
+    private val logger: Logger = LoggerFactory.getLogger(ProductPublisher::class.java)
 
     fun publishProductEvent(
         product: Product,
@@ -33,8 +33,10 @@ class ProductPublisher @Autowired constructor(
         )
 
         val envelope = Envelope(eventType = eventType, data = mapper.writeValueAsString(productEvent))
+        val writeEnvelopeAsString = mapper.writeValueAsString(envelope)
 
-        snsClient.publish(productEventsTopic.topicArn, mapper.writeValueAsString(envelope))
+        logger.info(writeEnvelopeAsString)
+        snsClient.publish(productEventsTopic.topicArn, writeEnvelopeAsString)
     }
 
 

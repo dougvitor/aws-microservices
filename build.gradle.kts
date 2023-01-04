@@ -30,7 +30,7 @@ java.sourceCompatibility = JavaVersion.VERSION_17
 
 val bootJar = tasks.getByName<BootJar>("bootJar") {
     baseName = "aws-microservice"
-    version = "1.6.0"
+    version = "1.5.0"
 }
 
 val unpack = tasks.create(name = "unpack", type = Copy::class) {
