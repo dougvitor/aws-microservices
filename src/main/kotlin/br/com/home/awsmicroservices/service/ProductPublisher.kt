@@ -36,7 +36,12 @@ class ProductPublisher @Autowired constructor(
         val writeEnvelopeAsString = mapper.writeValueAsString(envelope)
 
         logger.info(writeEnvelopeAsString)
-        snsClient.publish(productEventsTopic.topicArn, writeEnvelopeAsString)
+        snsClient.publish(productEventsTopic.topicArn, writeEnvelopeAsString).also {
+            logger.info(
+                "Product event received - MessageId: {} - Event: {} - ProductId: {}",
+                it.messageId, envelope.eventType, productEvent.productId
+            )
+        }
     }
 
 
