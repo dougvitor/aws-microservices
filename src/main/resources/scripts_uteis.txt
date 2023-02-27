@@ -1,2 +1,8 @@
 - Rodar localstack para simular serviços AWS localmente
 docker run -d --rm -p 4566:4566 -p 4571:4571 localstack/localstack -e "SERVICES=sns,sqs,dynamodb,s3"
+
+- Exemplos de pesquisa no CloudWatch
+fields @timestamp, @message, @log
+| sort @timestamp desc
+| limit 2000
+| filter @message like /Product event received/
