@@ -60,6 +60,8 @@ dependencies {
     implementation("org.mariadb.jdbc:mariadb-java-client:3.1.0")
     implementation("com.amazonaws:aws-java-sdk-sns:1.12.376")
     implementation("com.amazonaws:aws-java-sdk-sqs:1.12.376")
+    implementation("org.springframework:spring-jms:5.2.9.RELEASE")
+    implementation("com.amazonaws:amazon-sqs-java-messaging-lib:1.0.8")
     implementation("com.amazonaws:aws-java-sdk-s3:1.12.376")
 }
 
