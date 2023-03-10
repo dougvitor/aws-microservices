@@ -11,14 +11,14 @@ data class Invoice(
     var id: Long? = null,
 
     @Column(length = 32, nullable = false)
-    val invoiceNumber: String,
+    val invoiceNumber: String? = "",
 
     @Column(length = 32, nullable = false)
-    val customerName: String,
+    val customerName: String? = "",
 
-    val totalValue: BigDecimal,
+    val totalValue: BigDecimal? = null,
 
-    val productId: Long,
+    val productId: Long? = null,
 
-    val quantity: Long
+    val quantity: Long? = null
 )
